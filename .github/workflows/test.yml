@@ -40,4 +40,4 @@ jobs:
           github_token: ${{ secrets.github_token }}
           reporter: github-pr-review
           level: error
-          reviewdog_flags: -filter-mode=file -fail-on-error
+          filter_mode: nofilter
