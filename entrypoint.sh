@@ -1,5 +1,5 @@
 #!/bin/sh
-set -e
+set -ex
 
 if [ -n "${GITHUB_WORKSPACE}" ] ; then
   cd "${GITHUB_WORKSPACE}/${INPUT_WORKDIR}" || exit
@@ -8,13 +8,13 @@ fi
 # Install protolint
 if ! [ -f "protolint" ]; then
   echo "🔄 Installing protolint v${INPUT_PROTOLINT_VERSION}..."
-  curl -sSOL https://github.com/yoheimuta/protolint/releases/download/v${INPUT_PROTOLINT_VERSION}/protolint_${INPUT_PROTOLINT_VERSION}_Linux_x86_64.tar.gz
-  tar zxf protolint_${INPUT_PROTOLINT_VERSION}_Linux_x86_64.tar.gz
+  wget https://github.com/yoheimuta/protolint/releases/download/v"${INPUT_PROTOLINT_VERSION}"/protolint_"${INPUT_PROTOLINT_VERSION}"_Linux_x86_64.tar.gz
+  tar zxf protolint_"${INPUT_PROTOLINT_VERSION}"_Linux_x86_64.tar.gz
 fi
 
 export REVIEWDOG_GITHUB_API_TOKEN="${INPUT_GITHUB_TOKEN}"
 
-./protolint ${INPUT_PROTOLINT_FLAGS} \
+./protolint "${INPUT_PROTOLINT_FLAGS}" \
   | reviewdog -efm="[%f:%l:%c] %m" \
       -name="linter-name (protolint)" \
       -reporter="${INPUT_REPORTER:-github-pr-check}" \
