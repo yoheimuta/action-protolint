@@ -7,7 +7,7 @@
 [![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/yoheimuta/action-protolint?logo=github&sort=semver)](https://github.com/yoheimuta/action-protolint/releases)
 [![action-bumpr supported](https://img.shields.io/badge/bumpr-supported-ff69b4?logo=github&link=https://github.com/haya14busa/action-bumpr)](https://github.com/haya14busa/action-bumpr)
 
-This GitHub Action runs [protolint](https://github.com/yoheimuta/protolint) with reviewdog.
+This GitHub Action runs [protolint](https://github.com/yoheimuta/protolint) with [reviewdog](https://github.com/reviewdog/reviewdog).
 
 ## Usage
 ```yaml
