@@ -1,5 +1,5 @@
 #!/bin/sh
-set -e
+set -ex
 
 if [ -n "${GITHUB_WORKSPACE}" ] ; then
   cd "${GITHUB_WORKSPACE}/${INPUT_WORKDIR}" || exit
@@ -14,7 +14,8 @@ fi
 
 export REVIEWDOG_GITHUB_API_TOKEN="${INPUT_GITHUB_TOKEN}"
 
-./protolint "${INPUT_PROTOLINT_FLAGS}" | reviewdog -efm="[%f:%l:%c] %m" \
+./protolint "${INPUT_PROTOLINT_FLAGS}" 2>&1 \
+  | reviewdog -efm="[%f:%l:%c] %m" \
       -name="linter-name (protolint)" \
       -reporter="${INPUT_REPORTER:-github-pr-check}" \
       -filter-mode="${INPUT_FILTER_MODE}" \
