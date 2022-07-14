@@ -14,7 +14,7 @@ fi
 
 export REVIEWDOG_GITHUB_API_TOKEN="${INPUT_GITHUB_TOKEN}"
 
-./protolint "${INPUT_PROTOLINT_FLAGS}" \
+./protolint "${INPUT_PROTOLINT_FLAGS}" 2>&1 \
   | reviewdog -efm="[%f:%l:%c] %m" \
       -name="linter-name (protolint)" \
       -reporter="${INPUT_REPORTER:-github-pr-check}" \
