@@ -64,3 +64,7 @@ inputs:
       Default is `.`, which makes protolint run on the path provided in the workdir input.
     default: '.'
 ```
+
+## Example repository
+
+https://github.com/yoheimuta/reviewdog-protolint-example/blob/main/.github/workflows/reviewdog.yml
