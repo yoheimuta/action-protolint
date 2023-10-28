@@ -8,6 +8,7 @@
 [![action-bumpr supported](https://img.shields.io/badge/bumpr-supported-ff69b4?logo=github&link=https://github.com/haya14busa/action-bumpr)](https://github.com/haya14busa/action-bumpr)
 
 This GitHub Action runs [protolint](https://github.com/yoheimuta/protolint) with [reviewdog](https://github.com/reviewdog/reviewdog).
+By default, action-protolint uses the `.protolint.yaml` configuration file if it exists.
 
 ## Usage
 ```yaml
