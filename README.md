@@ -56,7 +56,7 @@ inputs:
   ### Flags for protolint ###
   protolint_version:
     description: 'Protolint version to be installed'
-    default: '0.38.2'
+    default: '0.46.3'
   protolint_flags:
     description: |
       Flags and args to pass to protolint.
